@@ -1,0 +1,52 @@
+:root {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #121212;
+  background-color: hsl(0, 0%, 96%);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --color-red: #cd0d0d;
+  --color-blue: #2b25e4;
+  --color-green: #43ae11;
+  --color-purple: #b31ebe;
+
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin-top: 7rem;
+  min-height: 100vh;
+  margin: 3rem 5rem;
+  width: 70vw;
+}
+
+h1 {
+  font-size: 5em;
+  line-height: 1.5;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+
+P, li {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.clickable{
+  cursor: pointer;
+}
