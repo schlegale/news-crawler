@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  top: -15rem;
+  right: 0;
+
+  background-image: url('/spider.svg');
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 800px;
+
+  animation: swing 2s infinite;
+  transform-origin: top;
+}
+
+@keyframes swing {
+  0%, 100% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(-20px);
+  }
+}

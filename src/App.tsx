@@ -8,6 +8,7 @@ import { fetchNews, getRandomColor } from './Utils'
 export default function App() {
   const [news, setNews] = useState<New[]>([])
   const [filteredNews, setFilteredNews] = useState<New[]>([])
+  const [page, setPage] = useState<number>(1)
   const [filter, setFilter] = useState<string>('all')
 
   const [titleColor, setTitleColor] = useState<string>('var(--color-purple)')
@@ -23,8 +24,9 @@ export default function App() {
 
   useEffect(() => {
     const initialFetch = async () => {
-      const fetchedNews = await fetchNews()
-      setNews(fetchedNews)
+      const fetchedNews = await fetchNews(1)
+      setNews(fetchedNews.formattedNews)
+      setPage(fetchedNews.page)
     }
 
     initialFetch()
@@ -53,8 +55,9 @@ export default function App() {
 
   return <div>
     <Crawlie onFetchNewNews={async () => {
-        const newNews = await fetchNews()
-        setNews(newNews)
+        const newNews = await fetchNews(page)
+        setNews(newNews.formattedNews)
+        setPage(newNews.page)
       }} />
     <h1 style={{color: titleColor}} onClick={handleH1Click} className='clickable'>News Crawler</h1>
     <p>
